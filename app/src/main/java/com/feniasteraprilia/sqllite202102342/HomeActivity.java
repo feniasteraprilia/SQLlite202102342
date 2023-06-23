@@ -25,7 +25,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        mahasiswa = findViewById(R.id.mahasiwa);
+        mahasiswa = findViewById(R.id.mahasiswa);
         databuku = findViewById(R.id.databuku);
 
         mahasiswa.setOnClickListener(new View.OnClickListener() {
