@@ -82,7 +82,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/mahasiwa"
+            android:id="@+id/mahasiswa"
             android:text="Mahasiswa"
             android:padding="20dp"
             android:drawableLeft="@drawable/menu_datauser"
@@ -103,5 +103,34 @@
             />
 
     </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AKtivitas Mahasiswa"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_margin="10dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.denzcoskun.imageslider.ImageSlider
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:iss_period="1000"
+                app:iss_corner_radius="20"
+                app:iss_auto_cycle="true"
+                app:iss_delay="1000"
+                app:iss_title_background="@color/purple_500"
+                android:id="@+id/imageSlider"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 </LinearLayout>
