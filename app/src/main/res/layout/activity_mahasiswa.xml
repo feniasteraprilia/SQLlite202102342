@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@drawable/tosca">
+
+    <TextView
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Form Biodata Mahasiswa"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="#fff"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="NIM Mahasiswa"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:gravity="left"
+        android:textColor="#fff"
+        android:layout_marginBottom="10dp"/>
+
+    <EditText
+        android:id="@+id/edtnim"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="NIM"
+        android:textSize="15dp"
+        android:textColorHint="#fff"
+        android:textColor="#fff"
+        android:paddingLeft="20dp"
+        android:background="@drawable/textfield"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nama Mahasiswa"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:gravity="left"
+        android:textColor="#fff"
+        android:layout_marginBottom="10dp"/>
+
+    <EditText
+        android:id="@+id/edtnama"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="Nama"
+        android:textSize="15dp"
+        android:textColorHint="#fff"
+        android:textColor="#fff"
+        android:paddingLeft="20dp"
+        android:background="@drawable/textfield"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Jenis Kelamin"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:gravity="left"
+        android:textColor="#fff"
+        android:layout_marginBottom="10dp"/>
+
+    <EditText
+        android:id="@+id/edtjk"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="Jenis Kelamin"
+        android:textSize="15dp"
+        android:textColorHint="#fff"
+        android:textColor="#fff"
+        android:paddingLeft="20dp"
+        android:background="@drawable/textfield"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Alamat"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:gravity="left"
+        android:textColor="#fff"
+        android:layout_marginBottom="10dp"/>
+
+    <EditText
+        android:id="@+id/edtalamat"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="Alamat"
+        android:textSize="15dp"
+        android:textColorHint="#fff"
+        android:textColor="#fff"
+        android:paddingLeft="20dp"
+        android:background="@drawable/textfield"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:gravity="left"
+        android:textColor="#fff"
+        android:layout_marginBottom="10dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="Email"
+        android:id="@+id/edtemail"
+        android:textSize="15dp"
+        android:textColorHint="#fff"
+        android:textColor="#fff"
+        android:paddingLeft="20dp"
+        android:background="@drawable/textfield"
+        android:layout_marginBottom="20dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Simpan"
+            android:padding="10dp"
+            android:id="@+id/simpan"
+            android:layout_marginRight="5dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tampil"
+            android:padding="10dp"
+            android:id="@+id/tampil"
+            android:layout_marginRight="5dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit"
+            android:padding="10dp"
+            android:id="@+id/edit"
+            android:layout_marginRight="5dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hapus"
+            android:padding="10dp"
+            android:id="@+id/hapus"
+            android:layout_marginRight="5dp"/>
+    </LinearLayout>
+</LinearLayout>
