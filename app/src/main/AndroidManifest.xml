@@ -18,6 +18,9 @@
             android:name=".MahasiswaActivity"
             android:exported="false" />
         <activity
+            android:name=".BukuActivity"
+            android:exported="false" />
+        <activity
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
