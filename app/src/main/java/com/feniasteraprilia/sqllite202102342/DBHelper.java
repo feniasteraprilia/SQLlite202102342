@@ -171,11 +171,12 @@ public class DBHelper extends SQLiteOpenHelper {
     public Boolean editDataBuku(String kode, String judul, String pengarang, String penerbit, String isbn) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
+        values.put("kode", kode);
         values.put("judul", judul);
         values.put("pengarang", pengarang);
         values.put("penerbit", penerbit);
         values.put("isbn", isbn);
-        Cursor cursor = db.rawQuery("Select * from buku where kode", new String[]{kode});
+        Cursor cursor = db.rawQuery("Select * from buku where kode=?", new String[]{kode});
         if (cursor.getCount() > 0) {
             long result = db.update("buku", values, "kode=?", new String[]{kode});
             if (result == -1) {

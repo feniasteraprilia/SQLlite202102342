@@ -14,22 +14,25 @@ import android.widget.Toast;
 
 public class BukuActivity extends AppCompatActivity {
     EditText kode, judul, pengarang, penerbit, isbn;
-
     Button simpan, tampil, hapus, edit;
+    DBHelper db;
 
-    DBHelper DB;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_buku);
 
         kode = findViewById(R.id.kodebuku);
         judul = findViewById(R.id.judulbuku);
         pengarang = findViewById(R.id.pengarang);
         penerbit = findViewById(R.id.penerbit);
         isbn = findViewById(R.id.isbn);
-        DB = new DBHelper(this);
+        simpan = findViewById(R.id.simpan);
+        tampil = findViewById(R.id.tampil);
+        hapus = findViewById(R.id.hapus);
+        edit = findViewById(R.id.edit);
+        db = new DBHelper(this);
 
         simpan.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,19 +43,19 @@ public class BukuActivity extends AppCompatActivity {
                 String pt = penerbit.getText().toString();
                 String in = isbn.getText().toString();
                 if (TextUtils.isEmpty(kb) || TextUtils.isEmpty(jdl) || TextUtils.isEmpty(pg) || TextUtils.isEmpty(in))
-                    Toast.makeText(BukuActivity.this, "", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(BukuActivity.this, "Semua Field Wajib diIsi", Toast.LENGTH_SHORT).show();
                 else {
                     if (!kb.equals("")) {
-                        Boolean checkkode = DB.checkkodeBuku(kb);
+                        Boolean checkkode = db.checkkodeBuku(kb);
                         if (checkkode == false) {
-                            Boolean insert = DB.insertDataBuku(kb, jdl, pg, pt, in);
+                            Boolean insert = db.insertDataBuku(kb, jdl, pg, pt, in);
                             if (insert == true) {
-                                Toast.makeText(BukuActivity.this, "", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(BukuActivity.this, "Data berhasil disimpan", Toast.LENGTH_SHORT).show();
                             } else {
-                                Toast.makeText(BukuActivity.this, "", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(BukuActivity.this, "Data gagal disimpan", Toast.LENGTH_SHORT).show();
                             }
                         } else {
-                            Toast.makeText(BukuActivity.this, "", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(BukuActivity.this, "Data Buku Sudah Ada", Toast.LENGTH_SHORT).show();
                         }
                     } else {
                         Toast.makeText(BukuActivity.this, "", Toast.LENGTH_SHORT).show();
@@ -64,7 +67,7 @@ public class BukuActivity extends AppCompatActivity {
         tampil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Cursor res = DB.tampilDataBuku();
+                Cursor res = db.tampilDataBuku();
                 if (res.getCount()==0){
                     Toast.makeText(BukuActivity.this, "Tidak Ada Data", Toast.LENGTH_SHORT).show();
                     return;
@@ -89,7 +92,7 @@ public class BukuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String Kb = kode.getText().toString();
-                Boolean cekHapusData = DB.hapusDataBuku(Kb);
+                Boolean cekHapusData = db.hapusDataBuku(Kb);
                 if (cekHapusData == true)
                     Toast.makeText(BukuActivity.this, "Data Terhapus", Toast.LENGTH_SHORT).show();
                 else
@@ -109,7 +112,7 @@ public class BukuActivity extends AppCompatActivity {
                         || TextUtils.isEmpty(pt) || TextUtils.isEmpty(in)) {
                     Toast.makeText(BukuActivity.this, "Semua Field Wajib Diisi", Toast.LENGTH_SHORT).show();
                 } else {
-                    Boolean edit = DB.editDataBuku(kb, jdl, pg, pt, in);
+                    Boolean edit = db.editDataBuku(kb, jdl, pg, pt, in);
                     if (edit == true) {
                         Toast.makeText(BukuActivity.this, "Data Berhasil Diedit", Toast.LENGTH_SHORT).show();
                     } else {
